@@ -13,6 +13,7 @@
 
 body {
     background-color: var(--light-backcolor);
+
 }
 
 .home,
@@ -39,6 +40,7 @@ body {
 nav {
     background: var(--light-backcolor);
     backdrop-filter: blur(30px);
+    position: fixed;
 }
 
 .progressBar {
@@ -85,24 +87,6 @@ i {
     animation: animate 1s ease-in-out infinite;
 }
 
-/* img */
-/* .img-containe {
-    width: 200px;
-    height: 200px;
-} */
-
-/* .imge {
-    /* height: 50vh;
-    width: 100%; */
-/* color: white; */
-/* font: bold 6.5em/2em monospace; */
-/* display: flex; */
-/* justify-content: center; */
-/* align-items: center; */
-
-/* background: linear-gradient(to top, #3204fd61, #9907fa44),
-url('./image/mypic.jpg');
-} */
 
 
 /* animation text start */
@@ -110,6 +94,8 @@ url('./image/mypic.jpg');
     /* height: 100vh; */
     width: 50%;
     display: flex;
+    position: relative;
+    left: 120px;
     align-items: center;
     justify-content: center;
     text-align: center;

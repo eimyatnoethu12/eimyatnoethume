@@ -16,6 +16,67 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB2YUu1oyz5Ch_sH_s-QpgFOTLgO9qhWAI",
+            authDomain: "form-with-database.firebaseapp.com",
+            databaseURL: "https://form-with-database-default-rtdb.firebaseio.com",
+            projectId: "form-with-database",
+            storageBucket: "form-with-database.appspot.com",
+            messagingSenderId: "965262653539",
+            appId: "1:965262653539:web:ebdad0ad32c022a6b6e056"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        import { getDatabase, set, ref, child } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+
+        const db = getDatabase();
+        //Set up our register function
+        var Email = document.getElementById('mail');
+        var Name = document.getElementById('name');
+        var subject = document.getElementById('subject');
+        var message = document.getElementById('message');
+
+        var btnSend = document.getElementById('btnSend');
+
+        btnSend.addEventListener('click', function () {
+            set(ref(db, "TheMessage/" + Name.value), {
+                CName: Name.value,
+                CEmail: Email.value,
+                CSubject: subject.value,
+                CMessage: message.value
+            })
+                .then(() => {
+                    alert('Data added sucessfully!');
+                })
+                .catch((error) => {
+                    alert(error)
+                });
+            console.log(subject.value);
+        });
+
+        // function insertData() {
+        //     set(ref(db, "TheMessage/" + Name.value), {
+        //         CName: Name.value,
+        //         CEmail: Email.value,
+        //         CSubject: subject.value,
+        //         CMessage: message.value
+        //     })
+        //         .then(() => {
+        //             alert('Data added sucessfully!');
+        //         })
+        //         .catch((error) => {
+        //             alert(error)
+        //         });
+        // }
+    </script>
 </head>
 
 
@@ -408,7 +469,7 @@
             <!-- right start -->
             <div class="col-md-5 shadow-lg m-3">
                 <div class="contact-form d-flex justify-content-center ">
-                    <form action="#">
+                    <form action="#home">
                         <div class="row">
                             <div class="col-lg-6 mb-4">
                                 <input type="text" placeholder="your Name"
@@ -460,9 +521,10 @@
 </div>
 <!-- footer end -->
 </body>
-<script type="module">
+<!-- <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+    import { getDatabase } from "firebase/database";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -490,9 +552,7 @@
     console.log(subject.value);
     var btnSend = document.getElementById('btnSend');
 
-    btnSend.addEventListener('click', insertData);
-
-    function insertData() {
+    btnSend.addEventListener('click', function () {
         set(ref(db, "TheMessage/" + Name.value), {
             CName: Name.value,
             CEmail: Email.value,
@@ -505,8 +565,23 @@
             .catch((error) => {
                 alert(error)
             });
-    }
-</script>
+    });
+
+    // function insertData() {
+    //     set(ref(db, "TheMessage/" + Name.value), {
+    //         CName: Name.value,
+    //         CEmail: Email.value,
+    //         CSubject: subject.value,
+    //         CMessage: message.value
+    //     })
+    //         .then(() => {
+    //             alert('Data added sucessfully!');
+    //         })
+    //         .catch((error) => {
+    //             alert(error)
+    //         });
+    // }
+</script> -->
 
 <script src="app.js"></script>
 
