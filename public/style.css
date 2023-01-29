@@ -40,7 +40,7 @@ body {
 nav {
     background: var(--light-backcolor);
     backdrop-filter: blur(30px);
-    position: fixed;
+
 }
 
 .progressBar {
@@ -95,7 +95,7 @@ i {
     width: 50%;
     display: flex;
     position: relative;
-    left: 120px;
+    left: 60px;
     align-items: center;
     justify-content: center;
     text-align: center;
