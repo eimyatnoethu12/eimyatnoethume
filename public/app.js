@@ -20,13 +20,13 @@ element.addEventListener('click', () => {
     contact.classList.toggle('change_night')
 })
 
-window.addEventListener('load', function () {
-    load.style.display = "none";
-    home.style.visibility = 'visible';
-    Bod.style.visibility = 'visible';
-    skill.style.visibility = 'visible';
-    project.style.visibility = 'visible';
-    freelancer.style.visibility = 'visible';
-    port.style.visibility = 'visible';
-    contact.style.visibility = 'visible';
-});
+// window.addEventListener('load', function () {
+//     load.style.display = "none";
+//     home.style.visibility = 'visible';
+//     Bod.style.visibility = 'visible';
+//     skill.style.visibility = 'visible';
+//     project.style.visibility = 'visible';
+//     freelancer.style.visibility = 'visible';
+//     port.style.visibility = 'visible';
+//     contact.style.visibility = 'visible';
+// });
