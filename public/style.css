@@ -24,6 +24,7 @@ body {
 .contact {
     background: var(--body-color);
     color: var(--text-color);
+    visibility: hidden;
 }
 
 .change_night {
@@ -40,6 +41,8 @@ body {
 nav {
     background: var(--light-backcolor);
     backdrop-filter: blur(30px);
+    visibility: hidden;
+
 
 }
 
@@ -87,7 +90,15 @@ i {
     animation: animate 1s ease-in-out infinite;
 }
 
+/* load */
 
+
+#load {
+    height: 50vh;
+    z-index: 100;
+    position: fixed;
+    margin: 17% 35%;
+}
 
 /* animation text start */
 .main {
